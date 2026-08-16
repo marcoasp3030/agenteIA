@@ -103,7 +103,7 @@ function InboxAgentPicker({
           type="button"
           disabled={pending}
           aria-label={label}
-          className="flex w-56 shrink-0 items-center justify-between gap-2 rounded-lg border border-border bg-bg-tertiary px-3 py-2 text-sm text-text-primary focus:border-border-focus focus:outline-none disabled:opacity-60"
+          className="flex w-full items-center justify-between gap-2 rounded-lg border border-border bg-bg-tertiary px-3 py-2 text-sm text-text-primary transition-colors hover:bg-bg-hover focus:border-border-focus focus:outline-none disabled:opacity-60 sm:w-56 sm:shrink-0"
         >
           <span className={cn("truncate", { "text-text-muted": !current })}>
             {current ? current.name : t("channels.noAgent", "No agent")}
@@ -168,15 +168,18 @@ function ChannelsSkeleton() {
     <div className="flex flex-col gap-6" aria-hidden="true">
       <section className="flex flex-col gap-3">
         <Skeleton className="h-5 w-44" />
-        <Card className="flex items-center justify-between gap-4">
+        <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Skeleton className="h-5 w-64" />
-          <div className="flex gap-1">
+          <div className="flex w-full gap-1 sm:w-auto">
             <Skeleton className="h-9 w-32" />
             <Skeleton className="h-9 w-28" />
           </div>
         </Card>
         {CHANNELS_ACCOUNT_KEYS.map((key) => (
-          <Card key={key} className="flex items-center justify-between gap-4">
+          <Card
+            key={key}
+            className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+          >
             <Skeleton className="h-4 w-48" />
             <Skeleton className="h-9 w-28" />
           </Card>
@@ -189,7 +192,7 @@ function ChannelsSkeleton() {
             {CHANNELS_INBOX_KEYS.map((key) => (
               <li
                 key={key}
-                className="flex items-center justify-between gap-4 border-border border-b px-4 py-3 last:border-b-0"
+                className="flex flex-col gap-3 border-border border-b px-4 py-3 last:border-b-0 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div className="flex min-w-0 flex-col gap-1.5">
                   <Skeleton className="h-4 w-40" />
@@ -804,10 +807,17 @@ export function ChannelsPage() {
         skeleton={<ChannelsSkeleton />}
       >
         <section className="flex flex-col gap-3">
-          <h2 className="flex items-center gap-2 font-medium text-text-primary">
-            <Plug className="h-4 w-4 text-accent" aria-hidden="true" />
-            {t("channels.instance", "Chatwoot instance")}
-          </h2>
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="flex items-center gap-2 font-medium text-text-primary">
+              <Plug className="h-4 w-4 text-accent" aria-hidden="true" />
+              {t("channels.instance", "Chatwoot instance")}
+            </h2>
+            {deployment && (
+              <Badge variant="secondary">
+                {activeAccounts.length}/{accounts.length}
+              </Badge>
+            )}
+          </div>
 
           {!deployment ? (
             <Card className="p-0">
@@ -839,7 +849,7 @@ export function ChannelsPage() {
             // The deployment is the section container; its accounts are nested sub-rows inside the
             // same card so they read as belonging to this one Chatwoot instance.
             <Card className="overflow-hidden p-0">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-border border-b bg-bg-tertiary/40 px-4 py-3">
+              <div className="flex flex-col gap-4 border-border border-b bg-bg-tertiary/40 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex min-w-0 items-center gap-2">
                   <ServiceLogo
                     service="chatwoot"
@@ -869,15 +879,25 @@ export function ChannelsPage() {
                   </Tooltip>
                 </div>
                 {isSuperAdmin && (
-                  <div className="flex shrink-0 gap-1">
-                    <Button variant="secondary" size="sm" onClick={openManage}>
+                  <div className="grid w-full grid-cols-[1fr_1fr_auto] gap-2 sm:flex sm:w-auto sm:shrink-0 sm:gap-1">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      onClick={openManage}
+                      className="min-w-0"
+                    >
                       <SlidersHorizontal
                         className="h-4 w-4"
                         aria-hidden="true"
                       />
                       {t("channels.manageAccounts", "Manage accounts")}
                     </Button>
-                    <Button variant="secondary" size="sm" onClick={openToken}>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      onClick={openToken}
+                      className="min-w-0"
+                    >
                       <KeyRound className="h-4 w-4" aria-hidden="true" />
                       {t("channels.editToken", "Edit token")}
                     </Button>
@@ -924,7 +944,7 @@ export function ChannelsPage() {
                   {activeAccounts.map((acct) => (
                     <li
                       key={acct.id}
-                      className="flex items-center justify-between gap-4 border-border border-b py-3 pr-4 pl-8 last:border-b-0"
+                      className="flex flex-col gap-3 border-border border-b px-4 py-3 last:border-b-0 sm:flex-row sm:items-center sm:justify-between sm:pr-4 sm:pl-8"
                     >
                       <div className="flex min-w-0 flex-wrap items-center gap-2">
                         <span className="truncate text-sm text-text-primary">
@@ -973,7 +993,7 @@ export function ChannelsPage() {
                           </a>
                         </Tooltip>
                       </div>
-                      <div className="flex shrink-0 items-center gap-2">
+                      <div className="flex w-full items-center justify-end gap-2 sm:w-auto sm:shrink-0">
                         <Tooltip
                           content={t("channels.syncInboxes", "Sync inboxes")}
                         >
@@ -1021,17 +1041,22 @@ export function ChannelsPage() {
         </section>
 
         <section className="flex flex-col gap-3">
-          <div>
-            <h2 className="flex items-center gap-2 font-medium text-text-primary">
-              <InboxIcon className="h-4 w-4 text-accent" aria-hidden="true" />
-              {t("channels.inboxes", "Inboxes")}
-            </h2>
-            <p className="mt-0.5 text-text-muted text-xs">
-              {t(
-                "channels.inboxesHelp",
-                'Assigning an agent connects the bot to that inbox; "No agent" leaves it silent.',
-              )}
-            </p>
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h2 className="flex items-center gap-2 font-medium text-text-primary">
+                <InboxIcon className="h-4 w-4 text-accent" aria-hidden="true" />
+                {t("channels.inboxes", "Inboxes")}
+              </h2>
+              <p className="mt-0.5 text-text-muted text-xs">
+                {t(
+                  "channels.inboxesHelp",
+                  'Assigning an agent connects the bot to that inbox; "No agent" leaves it silent.',
+                )}
+              </p>
+            </div>
+            {inboxes.length > 0 && (
+              <Badge variant="secondary">{inboxes.length}</Badge>
+            )}
           </div>
           {inboxes.length === 0 ? (
             <Card className="p-0">
