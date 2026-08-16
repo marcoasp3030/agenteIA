@@ -17,7 +17,7 @@ const prisma = new PrismaClient({
   adapter: new PrismaPg({ connectionString: url }),
 });
 
-const EMAIL = "admin@fazer.ai";
+const EMAIL = "admin@sistembr.local";
 const PASSWORD = "demo12345";
 
 async function main() {

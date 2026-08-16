@@ -1,11 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="public/assets/logo.png">
-  <img alt="fazer.ai agents" src="public/assets/logo-light.png" width="200">
-</picture>
-
-# fazer.ai agents
+# SistemBR
 
 **AI agents that run your customer service.**
 They talk like real people, schedule, collect payments and sell. Self-hosted, with any model.
@@ -23,7 +18,7 @@ They talk like real people, schedule, collect payments and sell. Self-hosted, wi
 
 ---
 
-**fazer.ai agents** is the self-hosted platform for AI agents that take on your customer service: they transcribe voice notes, read images, reply by text or voice, query the knowledge base, schedule, quote, collect payments, move the pipeline and know when to hand off to the human team. On WhatsApp and any other channel, all on your own infrastructure.
+**SistemBR** is the self-hosted platform for AI agents that take on your customer service: they transcribe voice notes, read images, reply by text or voice, query the knowledge base, schedule, quote, collect payments, move the pipeline and know when to hand off to the human team. On WhatsApp and any other channel, all on your own infrastructure.
 
 ### Highlights
 
@@ -35,21 +30,12 @@ They talk like real people, schedule, collect payments and sell. Self-hosted, wi
 
 ## 🚀 Get started
 
-From the first command to an agent answering on WhatsApp, driven by an **AI agent in your terminal**. A single line installs the CLI, authenticates with fazer.ai, connects the MCPs and installs the onboarding skill, which brings up the full stack (Chatwoot + fazer.ai agents + observability, with TLS) on a VPS and validates the instance end to end.
-
-**macOS and Linux**
+Clone the public repository and follow the development or deployment instructions:
 
 ```bash
-curl -fsSL https://app.fazer.ai/api/agents/install.sh | bash
+git clone https://github.com/marcoasp3030/agenteIA.git
+cd agenteIA
 ```
-
-**Windows (PowerShell)**
-
-```powershell
-irm https://app.fazer.ai/api/agents/install.ps1 | iex
-```
-
-The [Pro edition](https://app.fazer.ai/#/agents) has its own installer, available to subscribers.
 
 Three skills cover the operation, from installation to day-to-day use:
 
@@ -91,7 +77,7 @@ Three skills cover the operation, from installation to day-to-day use:
 ### 📈 Sales and operations
 
 - **Google Calendar scheduling** with automatic reminders.
-- **Pipeline Kanban:** the agent moves the card as the conversation progresses. Requires [Chatwoot fazer.ai Pro](https://fazer.ai/kanban).
+- **Pipeline Kanban:** the agent moves the card as the conversation progresses when the integration provides this feature.
 - **Proactive follow-ups** that respect business hours.
 - **Human handoff:** routes through the queue, or lets the agent pick the team or agent to hand off to.
 
@@ -126,8 +112,6 @@ The **Pro** edition adds what operating at scale requires:
 - **Multi-tenant:** several customers or brands in a single deploy, isolated in the database by RLS.
 - **Your own branding:** the panel under your identity (white-label).
 
-Details at [app.fazer.ai/#/agents](https://app.fazer.ai/#/agents).
-
 ## Stack
 
 Bun + Elysia · React 19 + Tailwind CSS v4 · Prisma + PostgreSQL (pgvector) · LangGraph TS · Langfuse (observability, optional).
@@ -145,11 +129,10 @@ bun dev                   # http://localhost:3000
 
 ## Links
 
-- 🌐 Website: [fazer.ai](https://fazer.ai)
+- 🌐 Project: [SistemBR on GitHub](https://github.com/marcoasp3030/agenteIA)
 - 📚 Documentation: [`docs/`](docs/)
 - 🤝 Contributing: [CONTRIBUTING-en.md](CONTRIBUTING-en.md)
-- 💬 Support: support@fazer.ai
 
 <div align="center">
-<sub>Free under Apache 2.0 · Pro under a proprietary EULA · made with ☕ by fazer.ai</sub>
+<sub>SistemBR · see the project's license and attribution files.</sub>
 </div>

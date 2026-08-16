@@ -847,7 +847,7 @@ export class ChatwootClient {
   }): Promise<unknown> {
     return this.request(this.config.adminToken, "POST", "/agent_bots", {
       name: params.name,
-      description: params.description ?? "fazer.ai agents",
+      description: params.description ?? "SistemBR",
       outgoing_url: params.outgoingUrl,
     });
   }

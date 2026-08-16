@@ -94,10 +94,9 @@ describe("Sidebar", () => {
   });
 
   describe("footer", () => {
-    test("renders support button (opens modal, not a link)", () => {
+    test("hides support when no SistemBR support email is configured", () => {
       renderSidebar();
-      const btn = screen.getByRole("button", { name: /^support$/i });
-      expect(btn.tagName).toBe("BUTTON");
+      expect(screen.queryByRole("button", { name: /^support$/i })).toBeNull();
     });
 
     test("renders secondary links with target=_blank and rel=noopener", () => {
@@ -106,20 +105,6 @@ describe("Sidebar", () => {
       expect(github).toHaveAttribute("target", "_blank");
       expect(github).toHaveAttribute("rel", "noopener noreferrer");
       expect(github.getAttribute("href")).toMatch(/^https:\/\//);
-    });
-
-    test("clicking support button opens a dialog with the email", () => {
-      renderSidebar();
-      const btn = screen.getByRole("button", { name: /^support$/i });
-      act(() => {
-        fireEvent.click(btn);
-      });
-      expect(screen.getByRole("dialog")).toBeInTheDocument();
-      // The mailto anchor inside the dialog carries the support email.
-      const mailto = screen
-        .getAllByRole("link")
-        .find((a) => a.getAttribute("href")?.startsWith("mailto:"));
-      expect(mailto?.getAttribute("href")).toMatch(/^mailto:.+@.+/);
     });
   });
 

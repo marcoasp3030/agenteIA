@@ -7,7 +7,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fazer-ai/agents.git"
+    "url": "https://github.com/marcoasp3030/agenteIA.git"
   },
   "scripts": {
     "dev": "bun --hot src/index.ts",

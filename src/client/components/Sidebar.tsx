@@ -135,7 +135,7 @@ interface SidebarFooterProps {
 }
 
 // Label for a white-labeled website link: the hostname reads like the default
-// entry ("fazer.ai") instead of dumping the full URL into the sidebar.
+// entry instead of dumping the full URL into the sidebar.
 function hostnameOf(url: string): string {
   try {
     return new URL(url).hostname;
@@ -163,9 +163,7 @@ function SidebarFooter({ collapsed = false, onNavigate }: SidebarFooterProps) {
   const hideGithub = branding?.hideGithubLink === true;
 
   const supportEmail = SUPPORT_LINK
-    ? (customSupportEmail ??
-      // biome-ignore lint/plugin/no-dynamic-i18n-key: extracted via magic comments in src/client/lib/navigation.tsx
-      t(SUPPORT_LINK.emailKey, SUPPORT_LINK.defaultEmail))
+    ? customSupportEmail || SUPPORT_LINK.defaultEmail || null
     : null;
   const supportMailto = supportEmail ? `mailto:${supportEmail}` : null;
 
@@ -201,7 +199,7 @@ function SidebarFooter({ collapsed = false, onNavigate }: SidebarFooterProps) {
   );
 
   let supportItem: ReactNode = null;
-  if (SUPPORT_LINK) {
+  if (SUPPORT_LINK && supportEmail) {
     // biome-ignore lint/plugin/no-dynamic-i18n-key: extracted via magic comments in src/client/lib/navigation.tsx
     const label = t(SUPPORT_LINK.labelKey, SUPPORT_LINK.defaultLabel);
     const trigger = (
@@ -286,7 +284,7 @@ function SidebarVersion({ collapsed = false }: { collapsed?: boolean }) {
   const isPro = !IS_FREE;
   const proLabel = t("edition.pro", "Pro");
   // The specific release page when the source provides one (Free/GitHub), else the public repo's
-  // releases list. Always fazer-ai/agents — in Pro too (its own repo is private), never the hub.
+  // releases list. Always use the public SistemBR repository.
   // releaseUrl is hub-authored, so only trust an allowlisted http(s) value; otherwise fall back.
   const upgradeHref =
     update.releaseUrl && isSafeHttpUrl(update.releaseUrl)

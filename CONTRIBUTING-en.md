@@ -3,7 +3,7 @@
 [Português (Brasil)](CONTRIBUTING.md) · **English**
 
 
-Thank you for your interest in contributing to **fazer.ai agents**! Bug reports, fixes, tests and documentation are all welcome.
+Thank you for your interest in contributing to **SistemBR**! Bug reports, fixes, tests and documentation are all welcome.
 
 ## How this repository works
 
@@ -17,8 +17,8 @@ This changes little for contributors, but it explains two things:
 ## Issues
 
 - Search existing issues (open and closed) before filing a new one.
-- For bugs, include: reproduction steps, expected behavior, observed behavior and relevant logs. Issues like [#2](https://github.com/fazer-ai/agents/issues/2) are a good model.
-- **Security vulnerabilities do not go in public issues:** write to [support@fazer.ai](mailto:support@fazer.ai).
+- For bugs, include: reproduction steps, expected behavior, observed behavior and relevant logs. Use the [SistemBR issue tracker](https://github.com/marcoasp3030/agenteIA/issues).
+- **Security vulnerabilities do not go in public issues:** use the private channel defined by the repository maintainer.
 
 ## Pull requests
 
@@ -52,6 +52,6 @@ Per-subsystem guides live in [`docs/`](docs/); read the one for the subsystem yo
 
 ## CLA (Contributor License Agreement)
 
-The project is distributed in two editions generated from the same master: Free (Apache 2.0) and Pro (commercial). So that your contribution can be reintegrated into the master and shipped in both, we ask for your agreement to the [CLA](https://github.com/fazer-ai/agents/blob/main/CLA.md), a license grant that authorizes that use **without transferring ownership**: the code remains yours.
+The project is distributed in two editions generated from the same master: Free (Apache 2.0) and Pro (commercial). So that your contribution can be reintegrated into the master and shipped in both, we ask for your agreement to the [CLA](CLA.md), a license grant that authorizes that use **without transferring ownership**: the code remains yours.
 
-**By submitting a pull request you state that you have read and agree to the [CLA](https://github.com/fazer-ai/agents/blob/main/CLA.md)** for that contribution and future ones.
+**By submitting a pull request you state that you have read and agree to the [CLA](CLA.md)** for that contribution and future ones.

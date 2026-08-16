@@ -8,7 +8,7 @@ name: Deploy Swagger UI to GitHub Pages
 # NOTE: Pages must be enabled on the repo with "GitHub Actions" as the source, or `configure-pages`
 # fails with "Get Pages site failed". It cannot self-enable: the action's `enablement` input needs a
 # token other than GITHUB_TOKEN. Pages on a private repo also requires a paid plan, which is why
-# this job only ever succeeded after fazer-ai/agents went public.
+# this job requires the public SistemBR repository.
 on:
   push:
     branches:
@@ -26,7 +26,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.repository == 'fazer-ai/agents'
+    if: github.repository == 'marcoasp3030/agenteIA'
 
     permissions:
       contents: read
@@ -49,7 +49,7 @@ jobs:
           <html lang="en">
           <head>
               <meta charset="UTF-8">
-              <title>fazer.ai agents API</title>
+              <title>SistemBR API</title>
               <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css">
               <link rel="icon" type="image/png" href="https://unpkg.com/swagger-ui-dist@5.9.0/favicon-32x32.png" sizes="32x32">
               <link rel="icon" type="image/png" href="https://unpkg.com/swagger-ui-dist@5.9.0/favicon-16x16.png" sizes="16x16">

@@ -11,7 +11,7 @@ Leva um desenvolvedor de "quero mexer no código" até "implementou com as boas 
 
 - O **repositório Pro/Full** (`fazer-ai/agents-pro`) e a **imagem Pro** são **privados**. **Nunca** publique o código, a imagem, ou trechos exclusivos do Full em local público (gist, fork público, registry público, post, screenshot).
 - O acesso ao Pro é concedido individualmente. Vazar repo/imagem quebra esse modelo.
-- **Sugestões e contribuições vão para o repositório Free** (open-source): `fazer-ai/agents`. Abra issues/PRs lá.
+- **Sugestões e contribuições vão para o repositório SistemBR**: `marcoasp3030/agenteIA`. Abra issues/PRs lá.
 
 ## Fluxo
 

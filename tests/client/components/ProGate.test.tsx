@@ -41,7 +41,10 @@ describe("ProGate (Free edition)", () => {
     fireEvent.click(screen.getByRole("button", { name: /create tenant/i }));
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     const cta = screen.getByRole("link", { name: /upgrade/i });
-    expect(cta).toHaveAttribute("href", "https://app.fazer.ai/#/agents");
+    expect(cta).toHaveAttribute(
+      "href",
+      "https://github.com/marcoasp3030/agenteIA",
+    );
     expect(cta).toHaveAttribute("target", "_blank");
   });
 
