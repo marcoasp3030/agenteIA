@@ -106,7 +106,6 @@ describe("Sidebar", () => {
       expect(github).toHaveAttribute("rel", "noopener noreferrer");
       expect(github.getAttribute("href")).toMatch(/^https:\/\//);
     });
-
   });
 
   describe("mobile drawer", () => {
