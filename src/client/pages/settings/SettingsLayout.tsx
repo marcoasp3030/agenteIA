@@ -1,4 +1,4 @@
-import { Palette, Server, UserRound } from "lucide-react";
+import { Palette, Server, Settings, UserRound } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { NavLink, Outlet } from "react-router";
 import { PageContainer } from "@/client/components";
@@ -25,13 +25,16 @@ export function SettingsLayout() {
 
   return (
     <PageContainer size="narrow" className="flex flex-col gap-6">
-      <header>
-        <h1 className="font-semibold text-text-primary text-xl">
-          {t("settings.title", "Settings")}
-        </h1>
-        <p className="mt-1 text-sm text-text-muted">
-          {t("settings.subtitle", "Manage your account and preferences")}
-        </p>
+      <header className="flex items-center gap-3">
+        <Settings className="h-6 w-6 text-accent" aria-hidden="true" />
+        <div>
+          <h1 className="font-semibold text-text-primary text-xl">
+            {t("settings.title", "Settings")}
+          </h1>
+          <p className="mt-0.5 text-sm text-text-muted">
+            {t("settings.subtitle", "Manage your account and preferences")}
+          </p>
+        </div>
       </header>
 
       <nav
@@ -49,7 +52,7 @@ export function SettingsLayout() {
                   "-mb-px inline-flex items-center gap-2 border-b-2 px-3 py-2 font-medium text-sm transition-colors",
                   {
                     "border-accent text-text-primary": isActive,
-                    "border-transparent text-text-secondary hover:text-text-primary":
+                    "border-transparent text-text-muted hover:text-text-secondary":
                       !isActive,
                   },
                 )
