@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="public/assets/logo.png">
-  <img alt="SistemBR Agents" src="public/assets/logo-light.png" width="220">
+  <img alt="SistemBR Agents" src="public/assets/logo-light.png3" width="220">
 </picture>
 
 # SistemBR Agents
