@@ -1,11 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="public/assets/logo.png">
-  <img alt="fazer.ai agents" src="public/assets/logo-light.png" width="200">
-</picture>
-
-# fazer.ai agents
+# SistemBR
 
 **Agentes de IA que assumem seu atendimento.**
 Falam como gente, agendam, cobram e vendem. Self-hosted, com qualquer modelo.
@@ -23,7 +18,7 @@ Falam como gente, agendam, cobram e vendem. Self-hosted, com qualquer modelo.
 
 ---
 
-**fazer.ai agents** é a plataforma self-hosted de agentes de IA que tocam o atendimento: transcrevem áudios, leem imagens, respondem por texto ou por voz, consultam a base de conhecimento, agendam, orçam, cobram, movem o funil e sabem quando passar para o time humano. No WhatsApp e em qualquer outro canal, tudo na sua própria infraestrutura.
+**SistemBR** é a plataforma self-hosted de agentes de IA que tocam o atendimento: transcrevem áudios, leem imagens, respondem por texto ou por voz, consultam a base de conhecimento, agendam, orçam, cobram, movem o funil e sabem quando passar para o time humano. No WhatsApp e em qualquer outro canal, tudo na sua própria infraestrutura.
 
 ### Destaques
 
@@ -35,21 +30,12 @@ Falam como gente, agendam, cobram e vendem. Self-hosted, com qualquer modelo.
 
 ## 🚀 Comece agora
 
-Do primeiro comando ao agente atendendo no WhatsApp, conduzido por um **agente de IA no seu terminal**. Uma linha só instala o CLI, autentica na fazer.ai, conecta os MCPs e instala a skill de onboarding, que sobe a stack completa (Chatwoot + fazer.ai agents + observability, com TLS) num VPS e valida a instância ponta a ponta.
-
-**macOS e Linux**
+Clone o repositório público e siga as instruções de desenvolvimento ou deploy:
 
 ```bash
-curl -fsSL https://app.fazer.ai/api/agents/install.sh | bash
+git clone https://github.com/marcoasp3030/agenteIA.git
+cd agenteIA
 ```
-
-**Windows (PowerShell)**
-
-```powershell
-irm https://app.fazer.ai/api/agents/install.ps1 | iex
-```
-
-A [versão Pro](https://app.fazer.ai/#/agents) tem o próprio instalador, liberado para assinantes.
 
 Três skills acompanham a operação, desde a instalação ao uso no dia a dia:
 
@@ -91,7 +77,7 @@ Três skills acompanham a operação, desde a instalação ao uso no dia a dia:
 ### 📈 Vendas e operação
 
 - **Agendamento no Google Calendar** com lembretes automáticos.
-- **Kanban de funil:** o agente move o card conforme o estágio da conversa. Requer [Chatwoot fazer.ai Pro](https://fazer.ai/kanban).
+- **Kanban de funil:** o agente move o card conforme o estágio da conversa quando a integração oferece esse recurso.
 - **Follow-ups proativos** que respeitam o horário de atendimento.
 - **Handoff para humano:** roteia pela fila, ou deixa o agente escolher pra qual time ou agente passar.
 
@@ -126,8 +112,6 @@ A edição **Pro** acrescenta o que quem opera em escala precisa:
 - **Multi-tenant:** vários clientes ou marcas num único deploy, isolados no banco por RLS.
 - **Branding próprio:** painel com a sua identidade (white-label).
 
-Detalhes em [app.fazer.ai/#/agents](https://app.fazer.ai/#/agents).
-
 ## Stack
 
 Bun + Elysia · React 19 + Tailwind CSS v4 · Prisma + PostgreSQL (pgvector) · LangGraph TS · Langfuse (observability, opcional).
@@ -145,11 +129,10 @@ bun dev                   # http://localhost:3000
 
 ## Links
 
-- 🌐 Site: [fazer.ai](https://fazer.ai)
+- 🌐 Projeto: [SistemBR no GitHub](https://github.com/marcoasp3030/agenteIA)
 - 📚 Documentação: [`docs/`](docs/)
 - 🤝 Contribuições: [CONTRIBUTING.md](CONTRIBUTING.md)
-- 💬 Suporte: support@fazer.ai
 
 <div align="center">
-<sub>Free sob Apache 2.0 · Pro sob EULA proprietária · feito com ☕ pela fazer.ai</sub>
+<sub>SistemBR · consulte os arquivos de licença e atribuição do projeto.</sub>
 </div>

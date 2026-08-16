@@ -249,14 +249,11 @@ const config = {
         ? Number(RATE_LIMIT_MCP_PER_MIN)
         : 1200,
   },
-  // NOTE: Central fazer.ai hub (app.fazer.ai) that serves operator announcements (the top banner)
-  // and the "new version available" check. Empty string DISABLES all hub communication (air-gapped,
-  // or a fork that does not want to talk to fazer.ai). For the Free/open-source edition this is a
-  // light update check: it sends the edition + current version + the request IP, never any PII.
+  // NOTE: Optional update/announcement hub. Empty string disables all hub communication.
   hub: {
     // NOTE: trim before stripping trailing slashes so a padded or whitespace-only value resolves to
     // "" (disabled) instead of a malformed URL.
-    url: (FAZER_AI_HUB_URL ?? "https://app.fazer.ai")
+    url: (FAZER_AI_HUB_URL ?? "")
       .trim()
       .replace(/\/+$/, ""),
     // NOTE: Optional override for the VERSION check only (a fork with its own release cadence points

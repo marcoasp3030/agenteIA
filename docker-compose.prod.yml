@@ -1,4 +1,4 @@
-# Platform-neutral production stack for fazer.ai agents (Portainer / EasyPanel / plain `docker compose`
+# Platform-neutral production stack for SistemBR (Portainer / EasyPanel / plain `docker compose`
 # on a VM). Coolify has its own file (docker-compose.coolify.yml, magic-vars); THIS file reads plain
 # env vars from a .env you generate with `bun scripts/gen-onboarding-env.ts` (writes every secret/URL
 # below, consistently). TLS + reverse proxy are EXTERNAL (Caddy/Traefik/Nginx Proxy Manager): this
@@ -19,7 +19,7 @@ services:
     # Edition-driven: Free (default, public image) vs Pro (set AGENTS_IMAGE to the private
     # Harbor image, project `agents`, after `docker login` — hub: create_registry_credential, per-user).
     # PLACEHOLDER: the public Free image is not published yet — swap `agents` once it exists.
-    image: ${AGENTS_IMAGE:-ghcr.io/fazer-ai/agents:latest}
+    image: ${AGENTS_IMAGE:-ghcr.io/marcoasp3030/agenteia:latest}
     pull_policy: always
     restart: always
     # NOTE: no `command` here on purpose — the image's default entrypoint already runs, in order:

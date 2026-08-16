@@ -1,4 +1,4 @@
--- Idempotent DB bootstrap for fazer.ai agents.
+-- Idempotent DB bootstrap for SistemBR.
 -- Run as a SUPERUSER (or DB owner with CREATEROLE) against the application database,
 -- once at provisioning time. Safe to re-run.
 --

@@ -6,9 +6,9 @@ Bifurca por edição. Pergunte ao desenvolvedor qual ele tem acesso, ou deduza: 
 
 Clone direto, sem credencial:
 ```sh
-git clone https://github.com/fazer-ai/agents.git fazer-ai-agents
+git clone https://github.com/marcoasp3030/agenteIA.git agenteIA
 ```
-(O repo Free é `fazer-ai/agents`.)
+(O repositório SistemBR é `marcoasp3030/agenteIA`.)
 
 ## Pro (repo privado via git proxy do hub)
 
