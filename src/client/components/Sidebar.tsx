@@ -163,7 +163,7 @@ function SidebarFooter({ collapsed = false, onNavigate }: SidebarFooterProps) {
   const hideGithub = branding?.hideGithubLink === true;
 
   const supportEmail = SUPPORT_LINK
-    ? (customSupportEmail || SUPPORT_LINK.defaultEmail || null)
+    ? customSupportEmail || SUPPORT_LINK.defaultEmail || null
     : null;
   const supportMailto = supportEmail ? `mailto:${supportEmail}` : null;
 

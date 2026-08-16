@@ -253,9 +253,7 @@ const config = {
   hub: {
     // NOTE: trim before stripping trailing slashes so a padded or whitespace-only value resolves to
     // "" (disabled) instead of a malformed URL.
-    url: (FAZER_AI_HUB_URL ?? "")
-      .trim()
-      .replace(/\/+$/, ""),
+    url: (FAZER_AI_HUB_URL ?? "").trim().replace(/\/+$/, ""),
     // NOTE: Optional override for the VERSION check only (a fork with its own release cadence points
     // this at a URL returning `{ latestVersion, releaseUrl? }`). Empty = derive from `url`.
     updateCheckUrl: (AGENTS_UPDATE_CHECK_URL ?? "").trim().replace(/\/+$/, ""),

@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, mock, test } from "bun:test";
+import config from "@/config";
 import {
   fetchAnnouncements,
   fetchLatestVersion,
@@ -6,6 +7,7 @@ import {
 import { getUpdates, resetUpdatesCache } from "@/modules/updates/service";
 
 const realFetch = globalThis.fetch;
+const realHubUrl = config.hub.url;
 
 function jsonResponse(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), {
@@ -27,11 +29,13 @@ function stubFetch(route: (url: string) => Response | Promise<Response>): {
 }
 
 beforeEach(() => {
+  config.hub.url = "https://hub.test";
   resetUpdatesCache();
 });
 
 afterEach(() => {
   globalThis.fetch = realFetch;
+  config.hub.url = realHubUrl;
   resetUpdatesCache();
 });
 

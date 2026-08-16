@@ -149,6 +149,7 @@ export interface SupportContact {
 // The email itself is i18n-driven so projects can route support to a
 // locale-specific inbox. Set to null to hide the support block entirely.
 // t('nav.support', 'Support')
+// t('nav.website', 'SistemBR')
 export const SUPPORT_LINK: SupportContact | null = {
   emailKey: "support.email",
   defaultEmail: "",
