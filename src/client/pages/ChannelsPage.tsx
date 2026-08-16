@@ -1044,10 +1044,7 @@ export function ChannelsPage() {
           <div className="flex items-start justify-between gap-3">
             <div>
               <h2 className="flex items-center gap-2 font-medium text-text-primary">
-                <InboxIcon
-                  className="h-4 w-4 text-accent"
-                  aria-hidden="true"
-                />
+                <InboxIcon className="h-4 w-4 text-accent" aria-hidden="true" />
                 {t("channels.inboxes", "Inboxes")}
               </h2>
               <p className="mt-0.5 text-text-muted text-xs">
